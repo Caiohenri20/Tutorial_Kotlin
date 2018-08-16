@@ -1,1 +1,101 @@
 
+fun main(args: Array<String>) {
+    var nome = "Ana Paula"
+    println("Olá $nome") //print pula linha
+    var nomeCompleto = "$nome Lopes" //concatena variavel e novo valor
+    print(nomeCompleto) //print sem pular linha
+}
+
+
+fun main(args: Array<String>) {
+    var nome:String? = "Ana Paula" //possibilita trocar o valor para null
+    println("Olá $nome")
+    nome = null
+    println("Olá $nome")
+}
+
+
+fun main(args: Array<String>) {
+    var nome:String? = "Ana Paula"
+    println("Olá $nome")
+    if (nome != null){
+        println("tamanho da string: ${nome?.length}") //faz a impressão de quantidade
+    }
+}
+
+
+fun parOuImpar(n: Int) = if (n % 2 == 0) "par" else "impar"
+
+fun enviarEmail(usuario:String, titulo:String? = null):String{
+    val t = titulo?: "Bem vindo" //se o valor for null é enviado esse titulo padrão
+    return "$usuario $t"
+}
+
+fun main(args: Array<String>) {
+    println(enviarEmail("Fernando", "ola"))
+    println(parOuImpar(2))
+    println(parOuImpar(3))
+}
+
+
+
+fun enviarEmail(usuario:String, titulo:String? = null):String{ 
+    val t = titulo?: "Bem vindo" //se o valor for null é enviado esse titulo padrão
+    return "$usuario $t"
+}
+
+fun main(args: Array<String>) {
+    println(enviarEmail(titulo = "Fernando", usuario = "ola")) //nomea o valor para cada parametro
+    println(parOuImpar(2))
+    println(parOuImpar(3))
+}
+
+
+
+fun toList(vararg arg: String): List<String>{ 
+    var lista = ArrayList<String>()
+    for (s in arg){
+        lista.add(s)
+    }
+    return lista
+}
+
+fun main(args: Array<String>) {
+    println(toList("a", "b", "c", "d", "e"))
+}
+
+
+
+
+fun <T> toList(vararg arg: T): List<T>{ //usar o T parametriza para receber qualquer tipo
+    var lista = ArrayList<T>()
+    for (s in arg){
+        lista.add(s)
+    }
+    return lista
+}
+
+fun main(args: Array<String>) {
+    println(toList<String>("a", "b", "c", "d", "e"))
+    println(toList<Int>(1, 2, 3, 4, 5))
+}
+
+
+
+class Aluno(nome: String, idade: Int){
+    val nome: String
+    val idade: Int
+    
+    init{
+        this.nome = nome
+        this.idade = idade
+    }
+    override fun toString(): String{
+        return "Aluno $nome, idade $idade anos"
+    }
+}
+
+fun main(args: Array<String>) {
+    val a1 = Aluno("Fernando", 18)
+    println(a1)
+}
