@@ -99,3 +99,65 @@ fun main(args: Array<String>) {
     val a1 = Aluno("Fernando", 18)
     println(a1)
 }
+
+
+fun toList(vararg arg: Int):Int{ 
+    var soma = 0
+    for (s in arg){
+        soma = (soma + s)
+    }
+    return soma
+}
+
+fun main(args: Array<String>) {
+    println(toList(1,3,5,4,6))
+}
+
+
+fun main(args: Array<String>) {
+    var arrayListInt = ArrayList<Int>()
+    
+    arrayListInt.add(1)
+    arrayListInt.add(2)
+    arrayListInt.add(3)
+    
+    var listaMutavel = mutableListOf<Int>(1,2,3,4,5)
+    println(listaMutavel)
+    listaMutavel.add(10)
+    println(listaMutavel)
+    
+    var listaImutavel = listOf<String>("a", "b", "c")
+    println(listaImutavel)
+    //listaImutavel.add("d") lista imutavel não pode ser modificada
+    listaImutavel = listOf<String>("1","2","3")
+    println(listaImutavel)
+}
+
+
+
+fun filtrar(list: List<Int>, filtro:(Int) -> (Boolean)):List<Int>{
+    val newList = arrayListOf<Int>()
+    for (item in list){
+        if (filtro(item)){
+            newList.add(item)
+        }
+    }
+    return newList
+}
+
+fun numerosPares(numero: Int):Boolean{
+    return numero % 2 == 0
+}
+
+fun numerosMaioresQue3(numero: Int): Boolean{
+    return numero > 3
+}
+
+fun main(args: Array<String>) {
+    var ints = listOf(1,2,3,4,5)
+    println(ints)
+    var novaLista = filtrar(ints, ::numerosPares)
+    println(novaLista)
+    novaLista = filtrar(ints, ::numerosMaioresQue3)
+    println(novaLista)
+}
