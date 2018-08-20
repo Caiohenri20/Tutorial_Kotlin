@@ -1,4 +1,4 @@
-1) Escreva uma função em Kotlin para somar os elementos de uma lista enviada como parâmetro
+//1) Escreva uma função em Kotlin para somar os elementos de uma lista enviada como parâmetro
 
 fun <T> toList(vararg args: T): List<T>{
     val list = ArrayList<T>()
