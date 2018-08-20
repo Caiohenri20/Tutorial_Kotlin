@@ -2,8 +2,9 @@
 
 fun <T> toList(vararg args: T): List<T>{
     val list = ArrayList<T>()
-    for (s in args)
+    for (s in args){
     list.add(s)
+    }
     return list
 }
 
