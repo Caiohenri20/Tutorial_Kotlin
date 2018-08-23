@@ -57,3 +57,16 @@ onal que informa o maior ou menor valor possível.*/
 
 
 
+
+
+
+/*6) Utilizando lambda e funções anônimas, escreva um programa em Kotlin com uma função
+encontraPesoIdeal, a partir da altura de uma pessoa. A função deve ter apenas uma li-
+nha. Utilize as seguintes expressões (h == altura):
+ Para homens: 72 . 7 * h  58 ;
+ Para mulheres: 62 . 1 * h  44 . 7*/
+
+
+
+
+
