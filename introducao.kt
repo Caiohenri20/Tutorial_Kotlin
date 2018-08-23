@@ -161,3 +161,14 @@ fun main(args: Array<String>) {
     novaLista = filtrar(ints, ::numerosMaioresQue3)
     println(novaLista)
 }
+
+
+fun main(args: Array<String>) {
+    var lista = ArrayList<Int>()
+    for (arg in args){
+        lista.add(arg.toInt())
+    }    
+    println(lista.sum())
+    println(args.map(String::toInt).sum())
+    println(somaList(args.map(String::toInt)))
+}
