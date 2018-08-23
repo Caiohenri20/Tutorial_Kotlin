@@ -181,3 +181,19 @@ fun somaList(lista: List<Int>): Int{
     }
     return somar
 }
+
+
+
+fun conta (lista: List<Int>,  numero: Int): Int{
+    var  cont:Int = 0    
+    for (i in lista){
+        if (i == numero){
+            cont = cont +1
+        }
+    }
+    return cont
+}
+fun main(args: Array<String>) {
+    val ints = listOf<Int>(1,2,3,4,5,3,3,4,2)
+    println (conta(ints,3))
+}
