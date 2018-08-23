@@ -40,4 +40,20 @@ fun main(args: Array<String>) {
 /*4) Escreva um programa em Kotlin com uma função que recebe por parâmetro uma lista de
 números inteiros e retorna o índice em que se encontra o maior elemento do vetor.*/
 
+fun indiceElement(lista: List<Int>): Int{
+    return lista.indices.maxBy { lista[it] } ?:0
+}
+
+fun main(args: Array<String>) {
+    var ints = listOf(1,2,3,4,5,6,8)
+    println(indiceElement(ints))
+}
+
+
+/*5) Utilizando Higher-Order Functions e Lambda, reescreva o programa anterior com uma
+função retornaIndice para retorna o índice do maior ou menor elemento, de acordo com
+uma função enviada como parâmetro. Esta função também deve ter um parâmetro opci-
+onal que informa o maior ou menor valor possível.*/
+
+
 
