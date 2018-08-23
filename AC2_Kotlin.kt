@@ -55,7 +55,22 @@ função retornaIndice para retorna o índice do maior ou menor elemento, de aco
 uma função enviada como parâmetro. Esta função também deve ter um parâmetro opci-
 onal que informa o maior ou menor valor possível.*/
 
+fun maiorElemento(lista: List<Int>): Int{
+    return lista.indices.maxBy { lista[it] } ?:0
+}
 
+fun menorElemento(lista: List<Int>): Int{
+    return lista.indices.minBy { lista[it] } ?:0
+}
+
+fun filtroNumero(arg: List<Int>, filtro: (menorNumero: Int?=null, maiorNumero: Int?=null) -> (Int)): Int{    
+	return filtro(arg, menorNumero, maiorNumero)
+}
+
+fun main(args: Array<String>) {
+    var ints = listOf(1,2,3,4,5,6,8,0)
+    println(filtroNumero(maiorElemento))
+}
 
 
 
