@@ -172,3 +172,12 @@ fun main(args: Array<String>) {
     println(args.map(String::toInt).sum())
     println(somaList(args.map(String::toInt)))
 }
+
+
+fun somaList(lista: List<Int>): Int{
+    var somar: Int = 0    
+    for (i in lista){
+        somar = somar + i
+    }
+    return somar
+}
