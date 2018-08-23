@@ -1,16 +1,12 @@
 //1) Escreva uma função em Kotlin para somar os elementos de uma lista enviada como parâmetro
 
-fun <T> toList(vararg args: T): List<T>{
-    val list = ArrayList<T>()
-    for (s in args){
-    list.add(s)
-    }
-    return list
+fun somaList(lista: List<Int>): Int{
+    return lista.sum()
 }
 
 fun main(args: Array<String>) {
-    val ints = toList<Int>(1,2,3,4,5)
-    println(ints.sum())
+    var ints = listOf(1,2,3,4,5)
+    println(somaList(ints))
 }
 
 
@@ -19,17 +15,29 @@ fun main(args: Array<String>) {
 números inteiros e um número inteiro qualquer X e retorna a quantidade de vezes que X
 encontra-se na lista.*/
 
-fun conta (lista: List<Int>,  numero: Int): Int{
-    var  cont:Int = 0    
-    for (i in lista){
-        if (i == numero){
-            cont = cont +1
-        }
-    }
-    return cont
+fun contaElement(lista: List<Int>,  numX: Int): Int{
+    return lista.count { it == numX }
 }
+
 fun main(args: Array<String>) {
-    val ints = listOf<Int>(1,2,3,4,5,3,3,4,2)
-    println (conta(ints,3))
+    var ints = listOf(1,2,3,4,5,5,5)
+    println(contaElement(ints,5))
 }
+
+/*3) Generalize a função do exercício anterior para funcionar para qualquer tipo de dados,
+não só inteiros*/
+
+fun contaElement(lista: List<Any>,  numX: Any): Int{
+    return lista.count { it == numX }
+}
+
+fun main(args: Array<String>) {
+    var ints = listOf('a','b','a')
+    println(contaElement(ints,'a'))
+}
+
+
+/*4) Escreva um programa em Kotlin com uma função que recebe por parâmetro uma lista de
+números inteiros e retorna o índice em que se encontra o maior elemento do vetor.*/
+
 
